@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Headline = styled.h2`
-  font-size: 50px;
-  font-weight: bold;
-  color: red;
+  font-size: 36px;
+  // margin: 25px 50px 0;
 `
 
-export {
+const IntroText = styled.p``
+
+export default {
 	Headline,
+	IntroText,
 }

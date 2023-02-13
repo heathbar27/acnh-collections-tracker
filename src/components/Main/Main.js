@@ -177,6 +177,17 @@ const Main = () => {
 
 	return (
 		<S.MainLayout>
+      <S.Headline>
+        Animal Crossing New Horizons Collections Tracker
+      </S.Headline>
+      <S.IntroText>
+        Welcome to the ACNH Collections Tracker v1.0!  See the availability and location on all the fish, bugs, sea 
+        creatures, and fossils to be found in Animal Crossing: New Horizons, and keep track of everything you have donated to the museum!
+      </S.IntroText>
+      <S.IntroText>
+        Version 1.0 provides basic display of info and tracking functionality, but I hope to add more options and 
+        mobile-friendly layout in future versions soon.
+      </S.IntroText>
       {/*<S.User>
         <div>User: Dropdown goes here</div>
         <div style={{'display': 'flex'}}>Add new user: <Input placeholder='Basic usage' /></div>

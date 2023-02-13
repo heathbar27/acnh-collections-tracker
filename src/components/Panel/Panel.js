@@ -25,11 +25,12 @@ const Panel = ({
 }) => {
 
   const { showLocation, showSpeed, showSize, showTime } = visibilityData
+  const maxWidth = category.categoryName === 'fossils' ? '350' : '100%'
 
 	return (
 		<TabPanel className="tab-panel">
       <TableContainer>
-        <Table variant='simple'>
+        <Table variant='simple' maxWidth={maxWidth}>
           <Thead>
             <Tr className="table-headers">
               <Th textAlign='center'>Name</Th>
@@ -38,7 +39,14 @@ const Panel = ({
               {showSize && <Th>Size</Th>}
               {showTime && <Th>Time</Th>}
               <Th>Price</Th>
-              {tabIndex === 3 ? (
+              {tabIndex !== 3 && 
+                <>
+                  {monthArray && monthArray.map((month) => {
+                    return <Th className='monthCol'>{toMonthName(month).abbr}</Th>
+                  })}
+                </>
+              }
+              {/*tabIndex === 3 ? (
                 <Th>Available In {getCurrentMonth().name}</Th>
               ) : (
                 <>
@@ -46,7 +54,7 @@ const Panel = ({
                   return <Th className='monthCol'>{toMonthName(month).abbr}</Th>
                 })}
                 </>
-              )}
+              )*/}
             </Tr>
           </Thead>
           <Tbody>

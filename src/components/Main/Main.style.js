@@ -7,6 +7,15 @@ const MainLayout = styled.div`
 		padding: 20px 0;
 	}
 
+	.tabs {
+		border-top: 2px solid;
+		border-color: inherit;
+
+		button:hover {
+			background-color: #eeeeee;
+		}
+	}
+
 	table {
 		font-size: 14px;
 	}
@@ -87,7 +96,7 @@ const MainLayout = styled.div`
 			border-color: #71b6f7;
 			border-width: 1px 1px 0 0;
 			padding: 2px;
-			margin-top: 10px;
+			margin-top: 15px;
 
 			:last-child {
 				border-right: 0;
@@ -110,6 +119,16 @@ const MainLayout = styled.div`
 
 `
 
+const Headline = styled.h2`
+  font-size: 36px;
+  margin-bottom: 20px;
+`
+
+const IntroText = styled.p`
+	margin-bottom: 20px;
+`
+
+
 const User = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -118,5 +137,7 @@ const User = styled.div`
 
 export default {
 	MainLayout,
+	Headline,
+	IntroText,
 	User,
 }
