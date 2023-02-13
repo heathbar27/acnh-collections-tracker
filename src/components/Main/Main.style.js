@@ -102,7 +102,7 @@ const MainLayout = styled.div`
 	}
 
 	img {
-		margin: 0 auto -5px;
+		margin: 0 auto;
 	}
 
 	.name {
