@@ -192,7 +192,7 @@ const Main = () => {
         <div>User: Dropdown goes here</div>
         <div style={{'display': 'flex'}}>Add new user: <Input placeholder='Basic usage' /></div>
       </S.User>*/}
-  		<Tabs onChange={(index) => setTabIndex(index)}>
+  		<Tabs onChange={(index) => setTabIndex(index)} marginTop='7'>
   			<TabList className="tabs">
   				{categories.map((category) => <Tab>{category.displayName}</Tab>)}
   			</TabList>
