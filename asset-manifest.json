@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/acnh-collections-tracker/static/css/main.e6c13ad2.css",
-    "main.js": "/acnh-collections-tracker/static/js/main.1bd7574b.js",
+    "main.js": "/acnh-collections-tracker/static/js/main.ce23fc0d.js",
     "static/js/787.ec704a7a.chunk.js": "/acnh-collections-tracker/static/js/787.ec704a7a.chunk.js",
     "index.html": "/acnh-collections-tracker/index.html",
     "main.e6c13ad2.css.map": "/acnh-collections-tracker/static/css/main.e6c13ad2.css.map",
-    "main.1bd7574b.js.map": "/acnh-collections-tracker/static/js/main.1bd7574b.js.map",
+    "main.ce23fc0d.js.map": "/acnh-collections-tracker/static/js/main.ce23fc0d.js.map",
     "787.ec704a7a.chunk.js.map": "/acnh-collections-tracker/static/js/787.ec704a7a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.1bd7574b.js"
+    "static/js/main.ce23fc0d.js"
   ]
 }
