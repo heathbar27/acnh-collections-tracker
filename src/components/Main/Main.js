@@ -200,7 +200,7 @@ const Main = () => {
       </S.IntroText>
       <S.Filters>
         <S.Filter>
-          <span>Month:</span>
+          <span>Available In:</span>
           <Select placeholder='Show All' onChange={handleAvailabilityFilter}>
             {monthArray && monthArray.map((month) => {
               return <option value={month}>{toMonthName(month).name}</option>
