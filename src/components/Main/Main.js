@@ -25,7 +25,7 @@ const Main = () => {
     showSize: true,
     showTime: true,
   })
-  const [showMonth, setShowMonth] = useState('')
+  const [month, setMonth] = useState('')
 
   const [userData, setUserData] = useState(null)
 
@@ -133,8 +133,8 @@ const Main = () => {
       	// console.log('**** seaCreatureData', seaCreatureData)
       	// console.log('**** fossilData', fossilData)
       }
-      console.log('********* showMonth', showMonth === '')
-  	}, [fishData, bugData, seaCreatureData, fossilData, showMonth])
+      console.log('********* month', month === '')
+  	}, [fishData, bugData, seaCreatureData, fossilData, month])
 
   	useEffect(() => {
   		switch(tabIndex){
@@ -181,6 +181,9 @@ const Main = () => {
   		}
   	}, [tabIndex])
 
+  const handleAvailabilityFilter = (e) => {
+    setMonth(e.target.value)
+  }
 
 	return (
 		<S.MainLayout>
@@ -195,18 +198,16 @@ const Main = () => {
         Version 1.0 provides basic display of info and tracking functionality, but I hope to add more options and 
         mobile-friendly layout in future versions soon.
       </S.IntroText>
-      <S.Toggles>
-        <S.Dropdown>
+      <S.Filters>
+        <S.Filter>
           <span>Available In:</span>
-          <Select placeholder='Show All' onChange={
-              (e) => setShowMonth(e.target.value)
-          }>
+          <Select placeholder='Show All' onChange={handleAvailabilityFilter}>
             {monthArray && monthArray.map((month) => {
               return <option value={month}>{toMonthName(month).name}</option>
             })}
           </Select>
-        </S.Dropdown>
-      </S.Toggles>
+        </S.Filter>
+      </S.Filters>
   		<Tabs onChange={(index) => setTabIndex(index)} marginTop='7'>
   			<TabList className="tabs">
   				{categories.map((category) => <Tab>{category.displayName}</Tab>)}
@@ -219,7 +220,7 @@ const Main = () => {
               visibilityData={visibilityData} 
               userData={userData}
               setUserData={setUserData}
-              showMonth={showMonth}
+              month={month}
             />
   				))}
   			</TabPanels>

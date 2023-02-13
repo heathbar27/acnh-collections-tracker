@@ -65,8 +65,6 @@ const Collectible = ({
    }
 
     return (
-      <>
-      {true ? (
         <Tr className={`${isDonated ? 'collectible donated' : 'collectible'}`}>
           <Td className='name' textAlign="center">
             <img src={isFossil ? itemData.image_uri : itemData.icon_uri} alt={collectibleName} className='icon' width='45'/>
@@ -108,10 +106,6 @@ const Collectible = ({
             )
           }
         </Tr>
-      ) : (
-        <></>
-      )}
-      </>
     )
 }
 

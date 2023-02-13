@@ -134,14 +134,15 @@ const IntroText = styled.p`
 `
 
 
-const Toggles = styled.div`
-	display: flex;
-	justify-content: space-between;
-`
-
-const Dropdown = styled.div`
+const Filters = styled.div`
 	display: flex;
 	align-items: center;
+`
+
+const Filter = styled.div`
+	display: flex;
+	align-items: center;
+	margin-right: 30px;
 
 	span {
 		white-space: nowrap;
@@ -153,6 +154,6 @@ export default {
 	MainLayout,
 	Headline,
 	IntroText,
-	Toggles,
-	Dropdown,
+	Filters,
+	Filter,
 }

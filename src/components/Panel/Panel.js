@@ -22,7 +22,7 @@ const Panel = ({
   visibilityData,
   userData,
   setUserData,
-  showMonth,
+  month,
 }) => {
 
   const { showLocation, showSpeed, showSize, showTime } = visibilityData
@@ -62,14 +62,14 @@ const Panel = ({
           {category.data && 
               Object.keys(category.data).map((item) => {
                 const itemData = category.data[item]
-                const isAvailable = 
+                const showCollectible = 
                   category.categoryName === 'fossils' || 
-                  showMonth === '' || 
-                  itemData.availability?.['month-array-northern'].indexOf(parseInt(showMonth)) > -1
+                  month === '' || 
+                  itemData.availability?.['month-array-northern'].indexOf(parseInt(month)) > -1
 
                 return (
                   <>
-                  {isAvailable && 
+                  {showCollectible && 
                     <Collectible 
                       tabIndex={tabIndex} 
                       displayName={category.displayName} 
