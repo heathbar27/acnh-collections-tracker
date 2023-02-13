@@ -133,7 +133,7 @@ const Main = () => {
       	// console.log('**** seaCreatureData', seaCreatureData)
       	// console.log('**** fossilData', fossilData)
       }
-      console.log('********* month', month === '')
+      // console.log('********* month', month === '')
   	}, [fishData, bugData, seaCreatureData, fossilData, month])
 
   	useEffect(() => {
