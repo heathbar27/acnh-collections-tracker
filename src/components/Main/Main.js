@@ -200,7 +200,7 @@ const Main = () => {
       </S.IntroText>
       <S.Filters>
         <S.Filter>
-          <span>Available In:</span>
+          <span>Month:</span>
           <Select placeholder='Show All' onChange={handleAvailabilityFilter}>
             {monthArray && monthArray.map((month) => {
               return <option value={month}>{toMonthName(month).name}</option>
@@ -208,9 +208,9 @@ const Main = () => {
           </Select>
         </S.Filter>
       </S.Filters>
-  		<Tabs onChange={(index) => setTabIndex(index)} marginTop='7'>
+  		<Tabs onChange={(index) => setTabIndex(index)} marginTop='0'>
   			<TabList className="tabs">
-  				{categories.map((category) => <Tab>{category.displayName}</Tab>)}
+  				{categories.map((category) => <Tab className='tab'>{category.displayName}</Tab>)}
   			</TabList>
   			<TabPanels>
   				{categories.map((category) => (

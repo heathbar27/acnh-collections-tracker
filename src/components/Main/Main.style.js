@@ -13,11 +13,28 @@ const MainLayout = styled.div`
 	}
 
 	.tabs {
-		border-top: 2px solid;
-		border-color: inherit;
-
 		button:hover {
 			background-color: #eeeeee;
+		}
+	}
+
+	.tab {
+		border-right: 2px solid #E2E8F0 !important;
+		border-top: 2px solid #E2E8F0 !important;
+
+		:first-child {
+			border-left: 2px solid #E2E8F0 !important;
+		}
+
+		&[aria-selected=true] {
+			background-color: #71b6f7;
+			border-color: #71b6f7 !important;
+			color: #ffffff;
+
+			:hover {
+				background-color: #71b6f7;
+				color: #ffffff;
+			}
 		}
 	}
 
@@ -135,8 +152,30 @@ const IntroText = styled.p`
 
 
 const Filters = styled.div`
+	position: sticky;
+	top: -2px;
+	background-color: #ffffff;
+	z-index: 3;
 	display: flex;
 	align-items: center;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	border-color: inherit;
+	padding: 15px 50px;
+	margin: 0 -50px 20px;
+
+	// :after {
+	// 	display: block;
+	// 	content: '';
+	// 	position: absolute;
+	// 	left: 0;
+	// 	bottom: 0;
+	// 	width: 100%;
+	// 	height: 5px;
+	// 	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.0));
+	// 	// background-color: green;
+	// 	z-index: 4;
+	// }
 `
 
 const Filter = styled.div`
