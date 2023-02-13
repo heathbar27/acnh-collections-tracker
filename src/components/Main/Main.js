@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { 
-  Dropdown,
-  Input,
   Tabs, 
   TabList, 
   TabPanels, 
@@ -55,7 +53,7 @@ const Main = () => {
     const data = JSON.parse(localStorage.getItem('acnh-data'))
 
     if (!data) {
-      alert('No user! Setting default data.')
+      // alert('No user! Setting default data.')
 
       localStorage.setItem('acnh-data', JSON.stringify({
         fish: [], 
@@ -70,9 +68,9 @@ const Main = () => {
 
   useEffect(() => {
     if (userData) {
-      console.log('*** current userData', userData)
+//      console.log('*** current userData', userData)
       localStorage.setItem('acnh-data', JSON.stringify(userData))
-      console.log('*** read data: ', JSON.parse(localStorage.getItem('acnh-data')))
+//      console.log('*** read data: ', JSON.parse(localStorage.getItem('acnh-data')))
     }
   }, [userData])
 
@@ -93,7 +91,7 @@ const Main = () => {
         .then(
           (result) => { setFishData(result) },
           (error) => {
-          	alert('there was an error with fish!')
+          	console.log('there was an error with fish!')
           }
         )
 	  fetch("https://acnhapi.com/v1/bugs")
@@ -101,7 +99,7 @@ const Main = () => {
         .then(
           (result) => { setBugData(result) },
           (error) => {
-          	alert('there was an error with bugs!')
+          	console.log('there was an error with bugs!')
           }
         )
 	  fetch("https://acnhapi.com/v1/sea")
@@ -109,7 +107,7 @@ const Main = () => {
         .then(
           (result) => { setSeaCreatureData(result) },
           (error) => {
-          	alert('there was an error with sea creatures!')
+          	console.log('there was an error with sea creatures!')
           }
         )
 	  fetch("https://acnhapi.com/v1/fossils")
@@ -117,7 +115,7 @@ const Main = () => {
         .then(
           (result) => { setFossilData(result) },
           (error) => {
-          	alert('there was an error with fossils!')
+          	console.log('there was an error with fossils!')
           }
         )
   	}, [])

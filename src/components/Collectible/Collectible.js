@@ -30,6 +30,7 @@ const Collectible = ({
     const data = {...userData}
     const [isDonated, setIsDonated] = useState(data[category].indexOf(itemName) > -1)
 
+    const collectibleName = itemName.split('_').join(' ')
     const shadowName = getShadowName(itemData.shadow)
 
     const handleDonationClick = () => {
@@ -40,21 +41,21 @@ const Collectible = ({
       // console.log('**** thing to check: ', data[category])
 
       if (!isDonated) {
-        console.log('**** donating: ', itemName)
+//        console.log('**** donating: ', itemName)
         data[category].push(itemName)
-         console.log('**** data after', data)
+//         console.log('**** data after', data)
         setUserData(data)
         setIsDonated(true)
       } else {
-        console.log('**** already donated: ', itemName)
+//        console.log('**** already donated: ', itemName)
       }
    }
 
    const handleUndonationClick = () => {
-      console.log('***** handle undonate')
+//      console.log('***** handle undonate')
       if (isDonated) {
         const index = data[category].indexOf(itemName)
-        console.log('***** index', index)
+//        console.log('***** index', index)
         if (index > -1) {
           data[category].splice(index, 1)
           setUserData(data)
@@ -68,10 +69,10 @@ const Collectible = ({
       {isAvailable ? (
         <Tr className={`${isDonated ? 'collectible donated' : 'collectible'}`}>
           <Td className='name' textAlign="center">
-            <img src={isFossil ? itemData.image_uri : itemData.icon_uri} className='icon' width='45'/>
-            {itemName.split('_').join(' ')}
+            <img src={isFossil ? itemData.image_uri : itemData.icon_uri} alt={collectibleName} className='icon' width='45'/>
+            {collectibleName}
             <S.ButtonContainer>
-              <button>DETAILS</button>
+              <button disabled style={{'pointer-events':'none', 'background': '#dddddd', 'color':'#bbbbbb'}}>DETAILS</button>
               {isDonated ? (
                   <button onClick={handleUndonationClick}>UNDO DONATE</button>
                 ) : (

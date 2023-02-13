@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const MainLayout = styled.div`
@@ -97,6 +96,10 @@ const MainLayout = styled.div`
 			:hover {
 				background-color: #71b6f7;
 				color: #f5f7e9;
+			}
+
+			:disabled {
+				border-color: #888888;
 			}
 		}
 	} 

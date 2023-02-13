@@ -1,5 +1,4 @@
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
-import { Headline } from './app.style'
 import Main from './components/Main/Main'
 
 const colors = {
@@ -18,9 +17,6 @@ const theme = extendTheme({colors})
 function App() {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      {/* <Headline>
-         The table of stuff will go here.
-      </Headline> */}
       <Main />
     </ChakraProvider>
   );
