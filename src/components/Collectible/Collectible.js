@@ -70,7 +70,7 @@ const Collectible = ({
             <img src={isFossil ? itemData.image_uri : itemData.icon_uri} alt={collectibleName} className='icon' width='45'/>
             {collectibleName}
             <S.ButtonContainer>
-              <button disabled style={{'pointer-events':'none', 'background': '#dddddd', 'color':'#bbbbbb'}}>DETAILS</button>
+              {/*<button disabled style={{'pointer-events':'none', 'background': '#dddddd', 'color':'#bbbbbb'}}>DETAILS</button>*/}
               {isDonated ? (
                   <button onClick={handleUndonationClick}>UNDO DONATE</button>
                 ) : (

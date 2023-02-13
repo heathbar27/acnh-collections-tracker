@@ -12,7 +12,7 @@ import Collectible from '../Collectible/Collectible'
 import { 
   toMonthName,
   monthArray,
-  getCurrentMonth,
+  // getCurrentMonth,
  } from '../../utils'
 //import S from './Panel.style'
 

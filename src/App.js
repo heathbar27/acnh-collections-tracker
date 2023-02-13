@@ -1,5 +1,4 @@
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
-import S from './app.style'
 import Main from './components/Main/Main'
 
 const colors = {
