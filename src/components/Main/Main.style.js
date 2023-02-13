@@ -3,6 +3,11 @@ import styled from 'styled-components'
 const MainLayout = styled.div`
 	margin: 20px 50px;
 
+	.hidden {
+	  display: none;
+	  visibility: hidden;
+	}
+
 	.tab-panel {
 		padding: 20px 0;
 	}

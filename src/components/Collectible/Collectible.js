@@ -88,7 +88,7 @@ const Collectible = ({
               }
             </Td>
           }
-          {showSpeed && <Td>speed</Td>}
+          {showSpeed && <Td>{itemData.speed}</Td>}
           {showSize && <Td>{shadowName}</Td>}
           {showTime && 
             <Td className='time'>
