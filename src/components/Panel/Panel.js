@@ -22,6 +22,7 @@ const Panel = ({
   visibilityData,
   userData,
   setUserData,
+  showMonth,
 }) => {
 
   const { showLocation, showSpeed, showSize, showTime } = visibilityData
@@ -59,18 +60,29 @@ const Panel = ({
           </Thead>
           <Tbody>
           {category.data && 
-              Object.keys(category.data).map((item) => 
-                <Collectible 
-                  tabIndex={tabIndex} 
-                  displayName={category.displayName} 
-                  category={category.categoryName}
-                  itemName={item} 
-                  itemData={category.data[item]}
-                  visibilityData={visibilityData}
-                  userData={userData}
-                  setUserData={setUserData}
-                />
-              )
+              Object.keys(category.data).map((item) => {
+                const itemData = category.data[item]
+                const isAvailable = 
+                  category.categoryName === 'fossils' || 
+                  showMonth === '' || 
+                  itemData.availability?.['month-array-northern'].indexOf(parseInt(showMonth)) > -1
+
+                return (
+                  <>
+                  {isAvailable && 
+                    <Collectible 
+                      tabIndex={tabIndex} 
+                      displayName={category.displayName} 
+                      category={category.categoryName}
+                      itemName={item} 
+                      itemData={itemData}
+                      visibilityData={visibilityData}
+                      userData={userData}
+                      setUserData={setUserData}
+                    />
+                  }
+                  </>
+                )})
             }
           </Tbody>
         </Table>

@@ -134,15 +134,25 @@ const IntroText = styled.p`
 `
 
 
-const User = styled.div`
+const Toggles = styled.div`
 	display: flex;
 	justify-content: space-between;
-	max-width: 650px;
+`
+
+const Dropdown = styled.div`
+	display: flex;
+	align-items: center;
+
+	span {
+		white-space: nowrap;
+		margin-right: 10px;
+	}
 `
 
 export default {
 	MainLayout,
 	Headline,
 	IntroText,
-	User,
+	Toggles,
+	Dropdown,
 }

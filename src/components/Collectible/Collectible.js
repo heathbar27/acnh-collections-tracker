@@ -25,7 +25,7 @@ const Collectible = ({
 
     const isFossil = category === 'fossils'
 //    const isAvailable = itemData.availability?.['month-array-northern'].indexOf(2) > -1 || isFossil
-    const isAvailable = true
+//    const isAvailable = true
 
     const data = {...userData}
     const [isDonated, setIsDonated] = useState(data[category].indexOf(itemName) > -1)
@@ -66,7 +66,7 @@ const Collectible = ({
 
     return (
       <>
-      {isAvailable ? (
+      {true ? (
         <Tr className={`${isDonated ? 'collectible donated' : 'collectible'}`}>
           <Td className='name' textAlign="center">
             <img src={isFossil ? itemData.image_uri : itemData.icon_uri} alt={collectibleName} className='icon' width='45'/>

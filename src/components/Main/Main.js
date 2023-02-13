@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { 
+  Select,
   Tabs, 
   TabList, 
   TabPanels, 
@@ -7,6 +8,10 @@ import {
 } from '@chakra-ui/react'
 import Panel from '../Panel/Panel'
 import S from './Main.style'
+import { 
+  monthArray,
+  toMonthName,
+} from '../../utils'
 
 const Main = () => {
 
@@ -20,6 +25,7 @@ const Main = () => {
     showSize: true,
     showTime: true,
   })
+  const [showMonth, setShowMonth] = useState('')
 
   const [userData, setUserData] = useState(null)
 
@@ -127,7 +133,8 @@ const Main = () => {
       	// console.log('**** seaCreatureData', seaCreatureData)
       	// console.log('**** fossilData', fossilData)
       }
-  	}, [fishData, bugData, seaCreatureData, fossilData])
+      console.log('********* showMonth', showMonth === '')
+  	}, [fishData, bugData, seaCreatureData, fossilData, showMonth])
 
   	useEffect(() => {
   		switch(tabIndex){
@@ -188,10 +195,18 @@ const Main = () => {
         Version 1.0 provides basic display of info and tracking functionality, but I hope to add more options and 
         mobile-friendly layout in future versions soon.
       </S.IntroText>
-      {/*<S.User>
-        <div>User: Dropdown goes here</div>
-        <div style={{'display': 'flex'}}>Add new user: <Input placeholder='Basic usage' /></div>
-      </S.User>*/}
+      <S.Toggles>
+        <S.Dropdown>
+          <span>Available In:</span>
+          <Select placeholder='Show All' onChange={
+              (e) => setShowMonth(e.target.value)
+          }>
+            {monthArray && monthArray.map((month) => {
+              return <option value={month}>{toMonthName(month).name}</option>
+            })}
+          </Select>
+        </S.Dropdown>
+      </S.Toggles>
   		<Tabs onChange={(index) => setTabIndex(index)} marginTop='7'>
   			<TabList className="tabs">
   				{categories.map((category) => <Tab>{category.displayName}</Tab>)}
@@ -204,6 +219,7 @@ const Main = () => {
               visibilityData={visibilityData} 
               userData={userData}
               setUserData={setUserData}
+              showMonth={showMonth}
             />
   				))}
   			</TabPanels>
