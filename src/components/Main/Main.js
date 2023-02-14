@@ -225,6 +225,7 @@ const Main = () => {
   				))}
   			</TabPanels>
   		</Tabs>
+      <p style={{'font-size':'14px', 'margin': '20px 0 40px'}}>Thanks to <a href="https://acnhapi.com/" target="_blank" style={{'color':'#71b6f7'}}>https://acnhapi.com/</a> for providing all ACNH collection data!</p>
 		</S.MainLayout>
 	)
 }
