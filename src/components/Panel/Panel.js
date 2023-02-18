@@ -59,7 +59,7 @@ const Panel = ({
               {tabIndex !== 3 && 
                 <>
                   {monthArray && monthArray.map((month) => {
-                    return <Th className='monthCol'>{toMonthName(month).abbr}</Th>
+                    return <Th className='monthCol' textAlign='center'>{toMonthName(month).abbr}</Th>
                   })}
                 </>
               }
@@ -85,10 +85,6 @@ const Panel = ({
                 const availableMonths = itemData.availability?.['month-array-northern']
                 const { availMonth, comingMonth, goingMonth } = filters
 
-                // set showAll if all month filters are set to show all
-                // const showAll = availMonth === '' && comingMonth === '' && goingMonth === ''
-                // console.log(`*** showAll for ${item}: ${showAll}`)
-
                 let showByMonth = true
 
                 if (availMonth !== '') {
@@ -106,20 +102,9 @@ const Panel = ({
                   // console.log(`*** show ${item} leaving after month: ${showByMonth}`)
                 }
 
-
-
-                // set monthFilterMatch to true if any of the month filters match availability
-                // const monthFilterMatch =  ||
-                //   availableMonths?.indexOf(parseInt(comingMonth)) > -1 ||
-                //   availableMonths?.indexOf(parseInt(goingMonth)) > -1
-                // console.log(`*** monthFilterMatch for ${item}: ${monthFilterMatch}`)
-
                 // set isFossil to true if this is a fossil
                 const isFossil = category.categoryName === 'fossils'
                 // console.log(`*** isFossil for ${item}: ${isFossil}`)
-
-                // showCollectible is true if we're showing all, if it matches month filtering, or it's a fossil
-                // const showCollectible = showAll || monthFilterMatch || isFossil
 
                 // showCollectible is true if we're showing by month or it's a fossil
                 const showCollectible = showByMonth || isFossil

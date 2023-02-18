@@ -82,6 +82,11 @@ const MainLayout = styled.div`
 
 	th {
 		border-bottom: 1px solid #39383d;
+
+		&.monthCol {
+			width: 45px;
+			max-width: 45px;
+		}
 	}
 
 	th, td {
@@ -151,6 +156,19 @@ const IntroText = styled.p`
 	margin-bottom: 20px;
 `
 
+const FooterText = styled.div`
+	font-size: 12px;
+
+	p {
+		margin-bottom: 10px;
+
+		:last-child {
+			font-size: 14px;
+			margin: 40px 0;
+		}
+	}
+`
+
 
 const Filters = styled.div`
 	position: sticky;
@@ -193,6 +211,7 @@ export default {
 	MainLayout,
 	Headline,
 	IntroText,
+	FooterText,
 	Filters,
 	Filter,
 }

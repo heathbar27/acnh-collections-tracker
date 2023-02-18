@@ -88,15 +88,6 @@ const Main = () => {
     }
   }, [userData])
 
-      // localStorage.setItem('acnh-data', JSON.stringify({
-      //   'Heather': { 
-      //     fish: ['bitterling'], 
-      //     bugs: ['tarantula'], 
-      //     seaCreatures: ['whelk'], 
-      //     fossils: ['amber'] 
-      //   },
-      // }))
-
 
 // Fetch API data
 	useEffect(() => {
@@ -141,7 +132,6 @@ const Main = () => {
       	// console.log('**** seaCreatureData', seaCreatureData)
       	// console.log('**** fossilData', fossilData)
       }
-      // console.log('********* month', month === '')
   	}, [fishData, bugData, seaCreatureData, fossilData, availMonth])
 
   	useEffect(() => {
@@ -195,7 +185,6 @@ const Main = () => {
       comingMonth: '',
       goingMonth: '',
     })
-//    setAvailMonth(e.target.value)
   }
 
   const handleComingFilter = (e) => {
@@ -221,12 +210,8 @@ const Main = () => {
         Animal Crossing New Horizons Collections Tracker
       </S.Headline>
       <S.IntroText>
-        Welcome to the ACNH Collections Tracker v1.0!  See the availability and location on all the fish, bugs, sea 
+        Welcome to the ACNH Collections Tracker!  See the availability and location on all the fish, bugs, sea 
         creatures, and fossils to be found in Animal Crossing: New Horizons, and keep track of everything you have donated to the museum!
-      </S.IntroText>
-      <S.IntroText>
-        Version 1.0 provides basic display of info and tracking functionality, but I hope to add more options and 
-        mobile-friendly layout in future versions soon.
       </S.IntroText>
       <S.Filters>
         <S.Filter>
@@ -272,7 +257,12 @@ const Main = () => {
   				))}
   			</TabPanels>
   		</Tabs>
-      <p style={{'font-size':'14px', 'margin': '20px 0 40px'}}>Thanks to <a href="https://acnhapi.com/" target="_blank" style={{'color':'#71b6f7'}}>https://acnhapi.com/</a> for providing all ACNH collection data!</p>
+      <S.FooterText>
+        <p>Version 1.0 provides basic display of info and tracking functionality, but I hope to add more options and 
+        mobile-friendly layout in future versions soon.</p>
+        <p>v. 1.1.0: Additional filtering for what is coming and going by month</p>
+        <p>Thanks to <a href="https://acnhapi.com/" target="_blank" style={{'color':'#71b6f7'}}>https://acnhapi.com/</a> for providing all ACNH collection data!</p>
+      </S.FooterText>
 		</S.MainLayout>
 	)
 }
