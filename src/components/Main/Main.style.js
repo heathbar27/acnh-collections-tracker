@@ -108,6 +108,7 @@ const MainLayout = styled.div`
 	.name {
 		text-transform: capitalize;
 		padding-bottom: 0;
+		min-width: 150px;
 
 		button {
 			flex-grow: 1;
@@ -179,13 +180,12 @@ const Filters = styled.div`
 `
 
 const Filter = styled.div`
-	display: flex;
-	align-items: center;
 	margin-right: 30px;
+	font-size: 14px;
 
-	span {
+	p {
 		white-space: nowrap;
-		margin-right: 10px;
+		margin: 0 10px 2px 2px;
 	}
 `
 

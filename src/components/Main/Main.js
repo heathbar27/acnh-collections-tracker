@@ -25,7 +25,15 @@ const Main = () => {
     showSize: true,
     showTime: true,
   })
-  const [month, setMonth] = useState('')
+
+  const [filterData, setFilterData] = useState({
+    availMonth: '',
+    comingMonth: '',
+    goingMonth: '',
+  })
+  const [availMonth, setAvailMonth] = useState('')
+  const [comingMonth, setComingMonth] = useState('')
+  const [goingMonth, setGoingMonth] = useState('')
 
   const [userData, setUserData] = useState(null)
 
@@ -134,7 +142,7 @@ const Main = () => {
       	// console.log('**** fossilData', fossilData)
       }
       // console.log('********* month', month === '')
-  	}, [fishData, bugData, seaCreatureData, fossilData, month])
+  	}, [fishData, bugData, seaCreatureData, fossilData, availMonth])
 
   	useEffect(() => {
   		switch(tabIndex){
@@ -182,8 +190,30 @@ const Main = () => {
   	}, [tabIndex])
 
   const handleAvailabilityFilter = (e) => {
-    setMonth(e.target.value)
+    setFilterData({
+      availMonth: e.target.value,
+      comingMonth: '',
+      goingMonth: '',
+    })
+//    setAvailMonth(e.target.value)
   }
+
+  const handleComingFilter = (e) => {
+    setFilterData({
+      availMonth: '',
+      comingMonth: e.target.value,
+      goingMonth: '',
+    })
+  }
+
+  const handleGoingFilter = (e) => {
+    setFilterData({
+      availMonth: '',
+      comingMonth: '',
+      goingMonth: e.target.value,
+    })
+  }
+
 
 	return (
 		<S.MainLayout>
@@ -200,10 +230,26 @@ const Main = () => {
       </S.IntroText>
       <S.Filters>
         <S.Filter>
-          <span>Available In:</span>
-          <Select placeholder='Show All' onChange={handleAvailabilityFilter}>
-            {monthArray && monthArray.map((month) => {
-              return <option value={month}>{toMonthName(month).name}</option>
+          <p>Available In:</p>
+          <Select placeholder='Show All' onChange={handleAvailabilityFilter} size='sm'>
+            {monthArray && monthArray.map((m) => {
+              return <option value={m} selected={m === parseInt(filterData.availMonth) ? 'true' : ''}>{toMonthName(m).name}</option>
+            })}
+          </Select>
+        </S.Filter>
+        <S.Filter>
+          <p>New In:</p>
+          <Select placeholder='Show All' onChange={handleComingFilter} size='sm'>
+            {monthArray && monthArray.map((m) => {
+              return <option value={m} selected={m === parseInt(filterData.comingMonth) ? 'true' : ''}>{toMonthName(m).name}</option>
+            })}
+          </Select>
+        </S.Filter>
+        <S.Filter>
+          <p>Gone After:</p>
+          <Select placeholder='Show All' onChange={handleGoingFilter} size='sm'>
+            {monthArray && monthArray.map((m) => {
+              return <option value={m} selected={m === parseInt(filterData.goingMonth) ? 'true' : ''}>{toMonthName(m).name}</option>
             })}
           </Select>
         </S.Filter>
@@ -220,7 +266,8 @@ const Main = () => {
               visibilityData={visibilityData} 
               userData={userData}
               setUserData={setUserData}
-              month={month}
+              month={filterData.availMonth}
+              filters={filterData}
             />
   				))}
   			</TabPanels>
